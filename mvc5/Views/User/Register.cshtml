@@ -1,0 +1,12 @@
+﻿@model mvc5.ViewModel.LoginSignupViewModel
+
+<h2>Register</h2>
+
+@using (var registryForm = Html.BeginForm("Register", "User"))
+{
+    @Html.AntiForgeryToken()
+    @Html.TextBoxFor(m => m.Login.Username, new { placeholder = "username" })
+    @Html.PasswordFor(m => m.Login.Password, new { placeholder = "password" })
+
+    <input type="submit" value="Reg" />
+}
